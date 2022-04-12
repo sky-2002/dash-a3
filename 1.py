@@ -4,7 +4,8 @@ import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0.0 or higher)
 
 app = Dash(__name__)
-
+server = app.server 
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
 colorscales = px.colors.named_colorscales()
 #df = pd.read_csv("D:/College/4Semester/DS250/3b/co2.csv")
 df = pd.read_csv("co2.csv")
