@@ -6,7 +6,8 @@ from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0
 app = Dash(__name__)
 
 colorscales = px.colors.named_colorscales()
-df = pd.read_csv("D:/College/4Semester/DS250/3b/co2.csv")
+#df = pd.read_csv("D:/College/4Semester/DS250/3b/co2.csv")
+df = pd.read_csv("co2.csv")
 df = df[['Year','Country','Total']]
 timedf = df['Year'].unique()
 timeline = []
